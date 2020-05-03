@@ -1,0 +1,72 @@
+<resources>
+    <string name="app_name">EV Calculator</string>
+    <string name="splash_ev_design">EV Design</string>
+    <string name="splash_subhead">Calculator</string>
+
+    <string name="mass_prompt">Mass</string>
+    <string name="gear_ratio_prompt">Gear Ratio</string>
+    <string name="transmission_efficiency_prompt">Transmission Efficiency</string>
+    <string name="rolling_resistance_prompt">Rolling Resistance</string>
+    <string name="drag_coeff_prompt">Drag Coefficient</string>
+    <string name="vehicle_frontal_area_prompt">Vehicle Frontal Area</string>
+    <string name="wheel_radius_prompt">Wheel Radius</string>
+    <string name="velocity_prompt">Velocity</string>
+    <string name="gradient_prompt">Gradient</string>
+
+    <string-array name="weight_array">
+        <item>Kilogram[Kg]</item>
+        <item>Milligram[mg]</item>
+        <item>Gram[g]</item>
+        <item>Tonne[t]</item>
+        <item>Ounce[oz]</item>
+        <item>Stone[s]</item>
+        <item>UK Hundred Weight[cwt]</item>
+        <item>UK Long Ton[ton]</item>
+    </string-array>
+
+    <string-array name="gear_ratio_array">
+        <item>No unit</item>
+    </string-array>
+
+    <string-array name="transmission_efficiency_array">
+        <item>%</item>
+    </string-array>
+
+    <string-array name="rolling_resistance_array">
+        <item>No unit</item>
+    </string-array>
+
+    <string-array name="drag_coeff_array">
+        <item>No unit</item>
+    </string-array>
+
+    <string-array name="vehicle_frontal_area_array">
+        <item>Sq. Metre(s) [m2]</item>
+        <item>Sq. Millimeter(s) [mm2]</item>
+        <item>Sq. Centimeter(s) [cm2]</item>
+        <item>Hectare(s) [ha]</item>
+        <item>Sq. Kilometre(s) [km2]</item>
+        <item>Sq. Inch(s) [in2]</item>
+    </string-array>
+
+    <string-array name="wheel_radius_array">
+        <item>Metre(s) [m]</item>
+        <item>Millimeter(s) [mm]</item>
+        <item>Centimeter(s) [cm]</item>
+        <item>Kilometre(s) [km]</item>
+        <item>Inch(s) [in]</item>
+        <item>Feet(s) [ft]</item>
+    </string-array>
+
+    <string-array name="velocity_array">
+        <item>km/h</item>
+        <item>m/s</item>
+        <item>ft/min</item>
+        <item>ft/s</item>
+    </string-array>
+
+    <string-array name="gradient_array">
+        <item>degree</item>
+    </string-array>
+
+</resources>

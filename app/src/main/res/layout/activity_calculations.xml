@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalculationsActivity"
+    android:layout_gravity="center"
+    android:background="@drawable/background_gradient">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="62dp"
+        android:text="calculations"
+        android:textAllCaps="true"
+        android:textColor="#C8C8C8"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="103dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="103dp"
+        android:background="@drawable/button_style"
+        android:paddingStart="32dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="32dp"
+        android:paddingBottom="16dp"
+        android:text="Motor Calculations"
+        android:textAllCaps="true"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:textAllCaps="true"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:text="input parameters"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/calculateButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--  Weight  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="100">
+
+                <EditText
+                    android:id="@+id/weightEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="40"
+                    android:inputType="numberDecimal"
+                    android:hint="Weight(W)"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#A6FFFFFF" />
+                <Spinner
+                    android:id="@+id/weightSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="60"
+                    android:spinnerMode="dialog"
+                    android:padding="16dp"
+                    android:theme="@style/spinnerTheme"
+                    android:entries="@array/weight_array"
+                    android:prompt="@string/mass_prompt" />
+            </LinearLayout>
+
+            <!--  Gear Ratio  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="100">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="40"
+                    android:inputType="numberDecimal"
+                    android:id="@+id/gearRatioEditText"
+                    android:hint="Gear Ratio(G)"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#A6FFFFFF" />
+                <Spinner
+                    android:id="@+id/gearRatioSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="60"
+                    android:spinnerMode="dialog"
+                    android:padding="16dp"
+                    android:theme="@style/spinnerTheme"
+                    android:entries="@array/gear_ratio_array"
+                    android:prompt="@string/gear_ratio_prompt" />
+            </LinearLayout>
+
+            <!--  Transmission Efficiency  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="100">
+
+                <EditText
+                    android:id="@+id/transmissionEffEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="40"
+                    android:inputType="numberDecimal"
+                    android:hint="Transmission Efficiency"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#A6FFFFFF" />
+                <Spinner
+                    android:id="@+id/transmissionEffSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="60"
+                    android:spinnerMode="dialog"
+                    android:padding="16dp"
+                    android:theme="@style/spinnerTheme"
+                    android:entries="@array/transmission_efficiency_array"
+                    android:prompt="@string/transmission_efficiency_prompt" />
+            </LinearLayout>
+
+            <!--  Coeff. of Rolling resistance  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="100">
+
+                <EditText
+                    android:id="@+id/coeffRollResEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="40"
+                    android:inputType="numberDecimal"
+                    android:hint="Coeff. of Rolling resistance(Crr)"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#A6FFFFFF" />
+                <Spinner
+                    android:id="@+id/coeffRollResSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="60"
+                    android:spinnerMode="dialog"
+                    android:padding="16dp"
+                    android:theme="@style/spinnerTheme"
+                    android:entries="@array/rolling_resistance_array"
+                    android:prompt="@string/rolling_resistance_prompt" />
+            </LinearLayout>
+
+            <!--  Vehicle's Drag Coefficient (Cd)  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="100">
+
+                <EditText
+                    android:id="@+id/dragCoeffEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="40"
+                    android:inputType="numberDecimal"
+                    android:hint="Vehicle's Drag Coeff.(Cd)"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#A6FFFFFF" />
+                <Spinner
+                    android:id="@+id/dragCoeffSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="60"
+                    android:spinnerMode="dialog"
+                    android:padding="16dp"
+                    android:theme="@style/spinnerTheme"
+                    android:entries="@array/drag_coeff_array"
+                    android:prompt="@string/drag_coeff_prompt" />
+            </LinearLayout>
+
+            <!--  Vehicle's Frontal Area (Af)  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="100">
+
+                <EditText
+                    android:id="@+id/vehicleFrontalAreaEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="40"
+                    android:inputType="numberDecimal"
+                    android:hint="Vehicle Frontal Area"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#A6FFFFFF" />
+                <Spinner
+                    android:id="@+id/vehicleFrontalAreaSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="60"
+                    android:spinnerMode="dialog"
+                    android:padding="16dp"
+                    android:theme="@style/spinnerTheme"
+                    android:entries="@array/vehicle_frontal_area_array"
+                    android:prompt="@string/vehicle_frontal_area_prompt" />
+            </LinearLayout>
+
+            <!--  Wheel Radius (Rw)  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="100">
+
+                <EditText
+                    android:id="@+id/wheelRadiusEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="40"
+                    android:inputType="numberDecimal"
+                    android:hint="Wheel Radius"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#A6FFFFFF" />
+                <Spinner
+                    android:id="@+id/wheelRadiusSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="60"
+                    android:spinnerMode="dialog"
+                    android:padding="16dp"
+                    android:theme="@style/spinnerTheme"
+                    android:entries="@array/wheel_radius_array"
+                    android:prompt="@string/wheel_radius_prompt" />
+            </LinearLayout>
+
+            <!--  Velocity (V)  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="100">
+
+                <EditText
+                    android:id="@+id/velocityEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="40"
+                    android:inputType="numberDecimal"
+                    android:hint="Velocity(V)"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#A6FFFFFF" />
+                <Spinner
+                    android:id="@+id/velocitySpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="60"
+                    android:spinnerMode="dialog"
+                    android:padding="16dp"
+                    android:theme="@style/spinnerTheme"
+                    android:entries="@array/velocity_array"
+                    android:prompt="@string/velocity_prompt" />
+            </LinearLayout>
+
+            <!--  Gradient (α)  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="100">
+
+                <EditText
+                    android:id="@+id/gradientEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="40"
+                    android:inputType="numberDecimal"
+                    android:hint="Gradient(α)"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#A6FFFFFF" />
+                <Spinner
+                    android:id="@+id/gradientSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="60"
+                    android:spinnerMode="dialog"
+                    android:padding="16dp"
+                    android:theme="@style/spinnerTheme"
+                    android:entries="@array/gradient_array"
+                    android:prompt="@string/gradient_prompt" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/calculateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="126dp"
+        android:background="@drawable/round_button_style"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:text="Calculate"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/resetButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="162dp"
+        android:layout_marginEnd="162dp"
+        android:background="#00FFFFFF"
+        android:text="Reset"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="32dp"
+        android:contentDescription="logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/skill_shark_logo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
