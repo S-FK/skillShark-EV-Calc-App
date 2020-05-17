@@ -4,15 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_gradient"
-    tools:context=".AboutActivity">
+    tools:context=".AboutActivity"
+    android:background="@drawable/background_gradient">
 
     <TextView
         android:id="@+id/textView4"
+        android:translationY="28dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/round_button_style"
-        android: android:layout_marginTop="65dp"
+        android:layout_marginStart="126dp"
+        android:layout_marginEnd="127dp"
+        android:background="@drawable/style2"
         android:paddingStart="32dp"
         android:paddingTop="16dp"
         android:paddingEnd="32dp"
@@ -21,22 +23,10 @@
         android:textAllCaps="true"
         android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        tools:layout_editor_absoluteX="126dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-    <TextView
-        android:id="@+id/skill_shark"
-        android:layout_width="330dp"
-        android:layout_height="520dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/style"
-        android:gravity="center_horizontal|top"
-        android:text="Skill Shark is an EduTech start-up focused on imparting 21st-century skills to youth. What differentiates us from the others is our approach and motive to impart skills dedicated to making experts out of learners.Focusing only on the delivery of skill-oriented services to educational Institutes and Youth. \n \n \n Globalization and the Fourth Industrial Revolution have increased the pace of change in work force markets, putting a premium on right skills and adaptability. Public policies should now shift to empowering and enabling workers to cope with transition,via income support, and also support incentives and opportunities for deskilling and upgrading skills. \n \n \n This is critical for addressing job displacement. Unemployment is a global problem with more than 73 million youth unemployed worldwide. In India, the unemployment rate among youth is almost 13 percent.The missing link is skilldevelopment, which is the key ingredient to robust economic growth. \n \n \n \n W W W . S K I L L S H A R K . C O M"
-        android:textColor="#000000"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="90dp" />
-    />
 
     <ImageView
         android:id="@+id/imageView"
@@ -53,6 +43,49 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.64"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:srcCompat="@drawable/skill_shark_logo" />
+
+    <ScrollView
+        android:id="@+id/Scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/style"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fadeScrollbars="false"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarSize="10dp"
+        android:scrollbarStyle="outsideInset"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--  Mass  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_weight="100"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="40"
+                    android:text="@string/about"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

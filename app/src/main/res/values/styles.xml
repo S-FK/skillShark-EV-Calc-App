@@ -13,4 +13,16 @@
         <item name="android:textColor">#E9818181</item>
     </style>
 
+    <style name="i">
+
+        <item name="android:textSize">
+            30sp
+        </item>
+
+        <item name="android:textColor">
+            #FEFFFD
+        </item>
+
+    </style>
+
 </resources>

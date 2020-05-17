@@ -4,70 +4,68 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ResultActivity"
+    tools:context=".AnnexureActivity"
     android:background="@drawable/background_gradient">
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textView4"
+        android:translationY="28dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="133dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="133dp"
-        android:text="result"
+        android:layout_marginStart="126dp"
+        android:layout_marginEnd="127dp"
+        android:background="@drawable/style2"
+        android:paddingStart="32dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="32dp"
+        android:paddingBottom="16dp"
+        android:text="Annexure"
         android:textAllCaps="true"
-        android:textColor="#C8C8C8"
-        android:textSize="40sp"
-        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
-
-    <Button
-        android:id="@+id/resetAndBackButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="162dp"
-        android:layout_marginEnd="162dp"
-        android:background="#00FFFFFF"
-        android:text="Reset and go back"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="100dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="32dp"
+        android:id="@+id/imageView"
+        android:layout_width="197dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="44dp"
+        android:width="116dp"
+        android:height="52dp"
         android:contentDescription="logo"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.64"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/skill_shark_logo" />
 
     <ScrollView
+        android:id="@+id/Scroll"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/resetAndBackButton"
+        android:background="@drawable/style"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         android:fadeScrollbars="false"
         android:scrollbarAlwaysDrawVerticalTrack="true"
         android:scrollbarSize="10dp"
         android:scrollbarStyle="outsideInset"
-        app:layout_constraintTop_toBottomOf="@+id/textView6">
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!--  Rolling resistance  -->
+            <!--  Mass  -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -82,21 +80,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="40"
-                    android:text="Rolling Resistance(Kw): "
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/rolling_resistance_value"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="60"
-                    android:text=""
-                    android:textColor="#FFFFFF"
+                    android:text="@string/mass_an"
+                    android:textColor="#000000"
                     android:textSize="20sp" />
             </LinearLayout>
 
-            <!--  Gradient resistance  -->
+            <!--  Gear Ratio  -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -111,21 +100,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="40"
-                    android:text="Gradient Resistance(Kw): "
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/gradient_resistance_value"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="60"
-                    android:text=""
-                    android:textColor="#FFFFFF"
+                    android:text = "Gear Ratio (G): Gear ratio is simply the leverage that you have in a set of gears. It is the ratio of an output to the input. It can be represented in usually 3 parameters: number of teeth (size of gear), force (torque), and velocity (rpm). Major use of gears is to transmit torque or to enhance torque. Geared devices can change the speed, torque, and direction of a power source. Gears almost always produce a change in torque, creating a mechanical advantage, through their gear ratio, and thus may be considered a simple machine."
+                    android:textColor="#000000"
                     android:textSize="20sp" />
             </LinearLayout>
 
-            <!--  Aerodynamic Drag  -->
+            <!--  tref  -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -140,21 +120,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="40"
-                    android:text="Aerodynamic Drag(Kw): "
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/aerodynamic_drag_value"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="60"
-                    android:text=""
-                    android:textColor="#FFFFFF"
+                    android:text = "Transmission Efficiency: It is the ratio of the power received over a transmission path to the power transmitted. Simply it can be defined as the ratio of the output to the input power of a system."
+                    android:textColor="#000000"
                     android:textSize="20sp" />
             </LinearLayout>
 
-            <!--  Total power  -->
+            <!--  crr  -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -169,21 +140,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="40"
-                    android:text="Total power(Kw): "
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/total_power_value"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="60"
-                    android:text=""
-                    android:textColor="#FFFFFF"
+                    android:text = "Coefficient of Rolling Resistance (Crr): The coefficient of rolling friction is the indication of how great the rolling resistance is for a given normal force between the wheel and the surface upon which it is rolling. This ratio is based on the Standard Friction Equation."
+                    android:textColor="#000000"
                     android:textSize="20sp" />
             </LinearLayout>
 
-            <!--  Total power with efficiency  -->
+            <!--  cd  -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -198,21 +160,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="40"
-                    android:text="Total Power with Efficiency(Kw): "
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/total_power_eff_value"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="60"
-                    android:text=""
-                    android:textColor="#FFFFFF"
+                    android:text = "Vehicle's Drag Coefficient (Cd): In fluid dynamics, the drag coefficient is a dimensionless quantity that is used to quantify the drag or resistance of an object in a fluid environment, such as air or water. It is used in the drag equation in which a lower drag coefficient indicates the object will have less aerodynamic or hydrodynamic drag. The drag coefficient is always associated with a particular surface area."
+                    android:textColor="#000000"
                     android:textSize="20sp" />
             </LinearLayout>
 
-            <!--  Vehicle Speed  -->
+            <!--  af  -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -227,21 +180,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="40"
-                    android:text="Vehicle Speed(RPM): "
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/vehicle_speed_value"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="60"
-                    android:text=""
-                    android:textColor="#FFFFFF"
+                    android:text = " Vehicle Frontal Area (Af): It is frontal area of vehicle which is exposed to aerodynamic drag For automobiles and many other objects, Vehicle Frontal Area is the projected frontal area of the vehicle."
+                    android:textColor="#000000"
                     android:textSize="20sp" />
             </LinearLayout>
 
-            <!--  Shaft speed  -->
+            <!--  Rw  -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -256,21 +200,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="40"
-                    android:text="Shaft Speed(RPM): "
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/shaft_speed_value"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="60"
-                    android:text=""
-                    android:textColor="#FFFFFF"
+                    android:text = "Wheel Radius (Rw): The radius of a wheel measured from center to tread."
+                    android:textColor="#000000"
                     android:textSize="20sp" />
             </LinearLayout>
 
-            <!--  Traction torque  -->
+            <!--  v  -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -285,21 +220,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="40"
-                    android:text="Traction Torque(Nm): "
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/traction_torque_value"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="60"
-                    android:text=""
-                    android:textColor="#FFFFFF"
+                    android:text = "Velocity (V): Velocity at which user want to drive the vehicle."
+                    android:textColor="#000000"
                     android:textSize="20sp" />
             </LinearLayout>
 
-            <!--  Load Torque  -->
+            <!--  alpha  -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -314,21 +240,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="40"
-                    android:text="Load Torque(Nm): "
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/load_torque_value"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="60"
-                    android:text=""
-                    android:textColor="#FFFFFF"
+                    android:text="Gradient (α): Gradient is an inclined part of a road or railway; a slope. It is Measured in terms of degree of inclination."
+                    android:textColor="#000000"
                     android:textSize="20sp" />
             </LinearLayout>
 
-            <!--  Load Power  -->
+            <!--  assumptions  -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -343,20 +260,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="40"
-                    android:text="Load Power(Kw): "
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/load_power_value"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="60"
-                    android:text=""
-                    android:textColor="#FFFFFF"
+                    android:text="Assumptions: Acceleration due to gravity: 9.81m/s^2 \n Density of air: 1.225 kg/m^3"
+                    android:textColor="#000000"
                     android:textSize="20sp" />
             </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

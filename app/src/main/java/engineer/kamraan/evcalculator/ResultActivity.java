@@ -87,54 +87,54 @@ public class ResultActivity extends AppCompatActivity {
 											double weight, double weightMult,
 											double velocity, double velocityMult) {
 		rollingResistance = (rollingResistanceCoeff * weight * weightMult * velocity * velocityMult * GRAVITY)/3600;
-		rollingResistanceTV.setText(String.valueOf(rollingResistance));
+		rollingResistanceTV.setText(String.valueOf(String.format("%.4f",rollingResistance)));
 	}
 
 	private void calculateGradientResistance(TextView gradientResistanceTV,double gradient,
 											double weight, double weightMult,
 											double velocity, double velocityMult) {
 		gradientResistance = (Math.sin(gradient * (Math.PI / 180)) * weight * weightMult * velocity * velocityMult * GRAVITY)/3600;
-		gradientResistanceTV.setText(String.valueOf(gradientResistance));
+		gradientResistanceTV.setText(String.valueOf(String.format("%.4f",gradientResistance)));
 	}
 
 	private void calculateAeroDrag(TextView aerodynamicDragTV, double dragCoeff, double frontalArea, double frontalAreaMult, double velocity, double velocityMult) {
 		aeroDrag = (0.5*dragCoeff*frontalArea*frontalAreaMult*DENSITY*velocity*velocityMult*Math.pow((velocity*velocityMult/3.6),2))/3600;
-		aerodynamicDragTV.setText(String.valueOf(aeroDrag));
+		aerodynamicDragTV.setText(String.valueOf(String.format("%.4f",aeroDrag)));
 	}
 
 	private void calculateTotalPower(TextView totalPowerTV) {
 		totalPower = rollingResistance + gradientResistance + aeroDrag;
-		totalPowerTV.setText(String.valueOf(totalPower));
+		totalPowerTV.setText(String.valueOf(String.format("%.4f",totalPower)));
 	}
 
 	private void calculateTotalPowerEff(TextView totalPowerEffTV, double transmissionEff) {
 		totalPowerEff = (rollingResistance + gradientResistance + aeroDrag)/(transmissionEff/100);
-		totalPowerEffTV.setText(String.valueOf(totalPowerEff));
+		totalPowerEffTV.setText(String.valueOf(String.format("%.4f",totalPowerEff)));
 	}
 
 	private void calculateVehicleSpeed(TextView vehicleSpeedTV, double velocity, double velocityMult, double wheelRadius, double wheelRadiusMult) {
 		vehicleSpeed = (velocity * velocityMult * 9.5493 / ( 3.6 * wheelRadius * wheelRadiusMult));
-		vehicleSpeedTV.setText(String.valueOf(vehicleSpeed));
+		vehicleSpeedTV.setText(String.valueOf(String.format("%.4f",vehicleSpeed)));
 	}
 
 	private void calculateShaftSpeed(TextView shaftSpeedTV, double gearRatio, double velocity, double velocityMult, double wheelRadius, double wheelRadiusMult) {
 		shaftSpeed = (gearRatio * velocity * velocityMult * 9.5493) / (3.6 * wheelRadius * wheelRadiusMult);
-		shaftSpeedTV.setText(String.valueOf(shaftSpeed));
+		shaftSpeedTV.setText(String.valueOf(String.format("%.4f", shaftSpeed)));
 	}
 
 	private void calculateTractionTorque(TextView tractionTorqueTV, double wheelRadius, double wheelRadiusMult, double velocity, double velocityMult) {
 		tractionTorque = ((rollingResistance + gradientResistance + aeroDrag) * 1000 * wheelRadius * wheelRadiusMult * 3.6) / velocity * velocityMult;
-		tractionTorqueTV.setText(String.valueOf(tractionTorque));
+		tractionTorqueTV.setText(String.valueOf(String.format("%.4f", tractionTorque)));
 	}
 
 	private void calculateLoadTorque(TextView loadTorqueTV, double transmissionEff, double gearRatio) {
 		loadTorque = tractionTorque / ((transmissionEff / 100) * gearRatio);
-		loadTorqueTV.setText(String.valueOf(loadTorque));
+		loadTorqueTV.setText(String.valueOf(String.format("%.4f", loadTorque)));
 	}
 
 	private void calculateLoadPower(TextView loadPowerTV) {
 		loadPower = (((2 * Math.PI * shaftSpeed * loadTorque)/60)/1000);
-		loadPowerTV.setText(String.valueOf(loadPower));
+		loadPowerTV.setText(String.valueOf(String.format("%.4f", loadPower)));
 	}
 
 }

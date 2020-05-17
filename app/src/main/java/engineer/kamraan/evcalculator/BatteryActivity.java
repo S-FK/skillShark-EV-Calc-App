@@ -14,24 +14,38 @@ import android.widget.Toast;
 
 public class BatteryActivity extends AppCompatActivity {
 
-    Button calculateButton, resetButton;
+    Button calculateButton, resetButton, iButton;
     EditText powerEditText, voltageEditText,
-            speedEditText, rangeEditText;
+            speedEditText, selectEditText;
+    Spinner selectSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calculations);
+        setContentView(R.layout.activity_battery);
 
         calculateButton = findViewById(R.id.calculateButton);
         resetButton = findViewById(R.id.resetButton);
+        iButton = findViewById(R.id.i);
+
+        iButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent annexureIntent = new Intent(BatteryActivity.this, AnnexureActivity.class);
+                startActivity(annexureIntent);
+            }
+
+        });
+
+        //spinners
+        selectSpinner = findViewById(R.id.selectSpinner);
 
 
         //edittexts
         powerEditText = findViewById(R.id.powerEditText);
         voltageEditText = findViewById(R.id.voltageEditText);
         speedEditText = findViewById(R.id.speedEditText);
-        rangeEditText = findViewById(R.id.rangeEditText);
+        selectEditText = findViewById(R.id.selectEditText);
 
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,7 +53,7 @@ public class BatteryActivity extends AppCompatActivity {
                 powerEditText.setText("");
                 voltageEditText.setText("");
                 speedEditText.setText("");
-                rangeEditText.setText("");
+                selectEditText.setText("");
             }
         });
 
@@ -55,7 +69,7 @@ public class BatteryActivity extends AppCompatActivity {
                     valuesEdit.putString("power", powerEditText.getText().toString());
                     valuesEdit.putString("voltage", voltageEditText.getText().toString());
                     valuesEdit.putString("speed", speedEditText.getText().toString());
-                    valuesEdit.putString("range", rangeEditText.getText().toString());
+                    valuesEdit.putString("select", selectEditText.getText().toString());
                     // save to shared prefs
                     valuesEdit.apply();
 
@@ -69,13 +83,45 @@ public class BatteryActivity extends AppCompatActivity {
             }
         });
 
+        selectSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+                double selectMultiplier;
+                switch(adapterView.getItemAtPosition(position).toString()) {
+                    case "Range[Km]":
+                        selectMultiplier = 1;
+                        break;
+                    case "Capacity[Ah]":
+                        selectMultiplier = 2;
+                        break;
+                    default:
+                        selectMultiplier = 1;
+                        Toast.makeText(BatteryActivity.this, "Error! Please select Weight's unit again", Toast.LENGTH_LONG).show();
+                        break;
+                }
+                //shared prefs
+                SharedPreferences values = getSharedPreferences("VALUES", MODE_PRIVATE);
+                SharedPreferences.Editor valuesEdit = values.edit();
+                //saving double as string
+                valuesEdit.putString("selectMultiplier", String.valueOf(selectMultiplier));
+                // save to shared prefs
+                valuesEdit.apply();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
     }
 
     private boolean checkInput() {
         return !(powerEditText.getText().toString().isEmpty() &&
                 voltageEditText.getText().toString().isEmpty() &&
                 speedEditText.getText().toString().isEmpty() &&
-                rangeEditText.getText().toString().isEmpty());
+                selectEditText.getText().toString().isEmpty());
     }
 
 }

@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class CalculationsActivity extends AppCompatActivity {
 
-	Button calculateButton, resetButton;
+	Button calculateButton, resetButton, iButton;
 	EditText massEditText, gearRatioEditText,
 			transmissionEffEditText, rollingResistanceCoeffEditText,
 			dragCoeffEditText, frontalAreaEditText,
@@ -29,6 +29,16 @@ public class CalculationsActivity extends AppCompatActivity {
 
 		calculateButton = findViewById(R.id.calculateButton);
 		resetButton = findViewById(R.id.resetButton);
+		iButton = findViewById(R.id.i);
+
+		iButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent annexureIntent = new Intent(CalculationsActivity.this, AnnexureActivity.class);
+				startActivity(annexureIntent);
+			}
+
+		});
 
 		//spinners
 		weightSpinner = findViewById(R.id.weightSpinner);

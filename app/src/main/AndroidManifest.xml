@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ResBatteryActivity"></activity>
+        <activity android:name=".testAc"></activity>
+        <activity android:name=".test" />
+        <activity android:name=".Test" />
+        <activity android:name=".CalculateMenuActivity" />
+        <activity android:name=".AnnexureActivity" />
+        <activity android:name=".ResBatteryActivity" />
         <activity android:name=".BatteryActivity" />
         <activity android:name=".AboutActivity" />
         <activity android:name=".ResultActivity" />

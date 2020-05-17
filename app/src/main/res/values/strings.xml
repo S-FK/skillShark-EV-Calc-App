@@ -4,6 +4,7 @@
     <string name="splash_subhead">Calculator</string>
 
     <string name="mass_prompt">Mass</string>
+    <string name="select_prompt">select</string>
     <string name="gear_ratio_prompt">Gear Ratio</string>
     <string name="transmission_efficiency_prompt">Transmission Efficiency</string>
     <string name="rolling_resistance_prompt">Rolling Resistance</string>
@@ -12,6 +13,10 @@
     <string name="wheel_radius_prompt">Wheel Radius</string>
     <string name="velocity_prompt">Velocity</string>
     <string name="gradient_prompt">Gradient</string>
+    <string name="i">i</string>
+    <string name="about">Skill Shark is an EduTech start-up focused on imparting 21st-century skills to youth. What differentiates us from the others is our approach and motive to impart skills dedicated to making experts out of learners.Focusing only on the delivery of skill-oriented services to educational Institutes and Youth. \n \n \n Globalization and the Fourth Industrial Revolution have increased the pace of change in work force markets, putting a premium on right skills and adaptability. Public policies should now shift to empowering and enabling workers to cope with transition,via income support, and also support incentives and opportunities for deskilling and upgrading skills. \n \n \n This is critical for addressing job displacement. Unemployment is a global problem with more than 73 million youth unemployed worldwide. In India, the unemployment rate among youth is almost 13 percent.The missing link is skilldevelopment, which is the key ingredient to robust economic growth. \n \n W W W . S K I L L S H A R K . C O M
+    </string>
+    <string name="mass_an">Mass (M): Total Mass of Vehicle (Inclusive of Driver, Body, Frame or Chassis, Power Train and Other Components) that has to be driven by an electric motor of an EV. A typical car may require more than 770 kilograms of steel, 180 kilograms of iron, 110 kilograms of plastics, 80 kilograms of aluminum, and 60 kilograms of rubber, as well as, less significant amounts of different materials. The total mass of an average car may be about 1500 kilograms. Addition of 400 Kg Passenger Weight and 100 Kg Luggage will give total considerable weight for motor as 2000 Kg</string>
 
     <string-array name="weight_array">
         <item>Kilogram[Kg]</item>
@@ -22,6 +27,11 @@
         <item>Stone[s]</item>
         <item>UK Hundred Weight[cwt]</item>
         <item>UK Long Ton[ton]</item>
+    </string-array>
+
+    <string-array name="select">
+        <item>Range[Km]</item>
+        <item>Capacity[Ah]</item>
     </string-array>
 
     <string-array name="gear_ratio_array">

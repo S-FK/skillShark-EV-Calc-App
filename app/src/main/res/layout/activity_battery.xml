@@ -24,6 +24,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
@@ -44,6 +46,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
+
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
@@ -57,6 +60,8 @@
         android:text="input parameters"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -94,7 +99,7 @@
                     android:textColorHint="#A6FFFFFF" />
             </LinearLayout>
 
-            <!--  Motor Voltage  -->
+            <!--  Gear Ratio  -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -112,10 +117,9 @@
                     android:hint="Motor Voltage (V)"
                     android:textColor="#FFFFFF"
                     android:textColorHint="#A6FFFFFF" />
-
             </LinearLayout>
 
-            <!--  speed  -->
+            <!--  Transmission Efficiency  -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -133,9 +137,32 @@
                     android:hint="Speed (Kmph)"
                     android:textColor="#FFFFFF"
                     android:textColorHint="#A6FFFFFF" />
+
             </LinearLayout>
 
-            <!--  range  -->
+            <!-- Spinner -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="100">
+                <Spinner
+                    android:id="@+id/selectSpinner"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="60"
+                    android:spinnerMode="dialog"
+                    android:padding="16dp"
+                    android:theme="@style/spinnerTheme"
+                    android:textColorHint="#A6FFFFFF"
+                    android:entries="@array/select"
+                    android:prompt="@string/select_prompt" />
+
+            </LinearLayout>
+
+            <!--  Coeff. of Rolling resistance  -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -145,19 +172,41 @@
                 android:layout_weight="100">
 
                 <EditText
-                    android:id="@+id/rangeEditText"
+                    android:id="@+id/selectEditText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="40"
                     android:inputType="numberDecimal"
-                    android:hint="Range (Km)"
+                    android:hint="Input value of above selection (range or capacity)"
                     android:textColor="#FFFFFF"
-                    android:textColorHint="#A6FFFFFF" />
+                    android:textColorHint="#A6FFFFFF"
+                    />
 
             </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/i"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="37dp"
+        android:background="@null"
+        android:text="@string/i"
+        android:textAppearance="@style/i"
+        android:textColor="#C8C8C8"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:paddingStart="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf=" @+id/textView4"
+
+        />
 
     <Button
         android:id="@+id/calculateButton"
@@ -176,6 +225,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
 
     <Button
         android:id="@+id/resetButton"
